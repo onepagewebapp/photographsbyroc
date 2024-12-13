@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Gallery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand">Photographs by Roc</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    
+
+    <section id="home" class="home-section d-flex justify-content-center align-items-center">
+        <div class="container text-center">
+            <h1 class="animated-title">Welcome to the Gallery</h1>
+            <p class="subtitle">Please check out these amazing collection below.</p>
+            <p class="subtitle">As someone quoted, "the beauty is in the eyes of the beholder!" </p>
+            <p class="subtitle">So look and see how you feel about it.</p>
+            <button class="animated-button">
+                <a href="#footer" class="animated-button">Let's Connect!</a>
+            </button>
+        </div>
+    </section>
+    
+    <br>
+    <section id="gallery" class="my-5">
+        <div class="container">
+            <h3 class="text-center">THE GALLERY</h3><br>
+    
+            <!-- Filter Buttons -->
+            <div class="text-center mb-4 d-flex justify-content-center flex-wrap gap-3">
+                <button class="btn btn-primary filter-btn" onclick="filterSelection('all')">Show All</button>
+                <button class="btn btn-primary filter-btn" onclick="filterSelection('portraits')">Portraits</button>
+                <button class="btn btn-primary filter-btn" onclick="filterSelection('abstract')">Abstract</button>
+                <button class="btn btn-primary filter-btn" onclick="filterSelection('landscapes')">Landscapes</button>
+                <button class="btn btn-primary filter-btn" onclick="filterSelection('nature')">Nature</button>
+            </div>
+    
+            <!-- Artwork Items -->
+            <div class="row">
+                <div class="col-md-4 filter-item portraits">
+                    <img src="https://picsum.photos/800/400?random=5" class="img-fluid service-img" alt="Portrait 1"
+                        onclick="openArtworkModal('Portrait 1', 'Artist Name 1', 'Description of Portrait 1', 'https://picsum.photos/800/400?random=5', 'https://artist-profile-link1.com')">
+                    <h5 class="mt-2">Portrait 1</h5>
+                </div>
+                <div class="col-md-4 filter-item portraits">
+                    <img src="https://picsum.photos/800/400?random=5" class="img-fluid service-img" alt="Portrait 2"
+                        onclick="openArtworkModal('Portrait 2', 'Artist Name 2', 'Description of Portrait 2', 'https://picsum.photos/800/400?random=5', 'https://artist-profile-link2.com')">
+                    <h5 class="mt-2">Portrait 2</h5>
+                </div>
+                <div class="col-md-4 filter-item abstract">
+                    <img src="https://picsum.photos/800/400?random=6" class="img-fluid service-img" alt="Abstract 1"
+                        onclick="openArtworkModal('Abstract 1', 'Artist Name 3', 'Description of Abstract 1', 'https://picsum.photos/800/400?random=6', 'https://artist-profile-link3.com')">
+                    <h5 class="mt-2">Abstract 1</h5>
+                </div>
+                <div class="col-md-4 filter-item landscapes">
+                    <img src="https://picsum.photos/800/400?random=7" class="img-fluid service-img" alt="Landscape 1"
+                        onclick="openArtworkModal('Landscape 1', 'Artist Name 4', 'Description of Landscape 1', 'https://picsum.photos/800/400?random=7', 'https://artist-profile-link4.com')">
+                    <h5 class="mt-2">Landscape 1</h5>
+                </div>
+                <div class="col-md-4 filter-item nature">
+                    <img src="https://picsum.photos/800/400?random=6" class="img-fluid service-img" alt="Nature 1"
+                        onclick="openArtworkModal('Nature 1', 'Artist Name 5',  'Description of Nature 1', 'https://picsum.photos/800/400?random=6', 'https://artist-profile-link5.com')">
+                    <h5 class="mt-2">Nature 1</h5>
+                </div>
+                <div class="col-md-4 filter-item landscapes">
+                    <img src="https://picsum.photos/800/400?random=7" class="img-fluid service-img" alt="Landscape 1"
+                        onclick="openArtworkModal('Landscape 2', 'Artist Name 6', 'Description of Landscape 2', 'https://picsum.photos/800/400?random=7', 'https://artist-profile-link4.com')">
+                    <h5 class="mt-2">Landscape 2</h5>
+                </div>
+
+            </div>
+        </div>
+    </section><br>
+
+
+
+    <!-- Artwork Detail Modal -->
+    <div class="modal fade" id="artworkModal" tabindex="-1" aria-labelledby="artworkModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="artworkModalLabel">Photo Title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Artwork Image -->
+                            <img id="artworkImage" src="" alt="Artwork Image" class="img-fluid rounded">
+                        </div>
+                        <div class="col-md-6">
+                            <!-- Artwork Details -->
+                            <p><strong>Artist:</strong> <span id="artworkArtist"></span></p>
+                            <p><strong>Description:</strong> <span id="artworkDescription"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <footer id="footer" class="text-center  text-white py-3">
+        <p class="p-about">Sharing passion and improving skills while exploring sceneries and opportunities in here.</p>
+        <div id="contact">
+            <p>Connect with me @blablablabla</p>
+        </div>
+        <p>&copy; 2024 Photographs by Roc</p>
+    </footer>
+    
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel">Contact</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

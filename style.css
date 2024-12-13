@@ -1,0 +1,182 @@
+body {
+    background-color: #D1DBB5;
+}
+
+.navbar {
+    background-color: #3A2F2B;
+}
+
+footer {
+    background-color: #3A2F2B;
+
+}
+
+#about {
+    background-color: #3A2F2B;
+
+}
+
+.p-about {
+    font-size: 25px;
+}
+
+
+
+/* Home Section Styling */
+.home-section {
+    height: 100vh;
+    background: linear-gradient(135deg, #C25A3D, #8A9A5B);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    letter-spacing: 2.5px;
+}
+
+.animated-title {
+    color: #fff; /* White text for better contrast */
+    font-size: 3em;
+    animation: fadeIn 2s ease-in-out infinite alternate;
+}
+
+.subtitle {
+    color: #fff;
+    margin-top: 10px;
+    font-size: 1.2em;
+    opacity: 0.8;
+}
+
+.animated-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #3A2F2B;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.animated-button:hover {
+    transform: scale(1.1);
+}
+
+.btn-footer {
+    font-size: 17px;
+    background-color: #3A2F2B;
+}
+
+/* Keyframes for animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+
+/* welcome text */
+h1 {
+    text-shadow: 0 0 5px #ff7e5f, 0 0 10px #ff7e5f, 0 0 15px #feb47b;
+}
+  
+
+/* gallery section */
+
+
+h3 {
+    text-align: center;
+    letter-spacing: 7px;
+    font-size: 90px;
+  }
+
+  h3 {
+    width: 100%;
+    font-weight: bold;
+    font-size: 40px;
+    position: relative;
+    margin: 40px 0;
+  }
+
+  h3::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background-color: crimson;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: animate 4s linear infinite;
+  }
+
+  @keyframes animate {
+    0% {
+      width: 100px;
+    }
+    50% {
+      width: 200px;
+    }
+    100% {
+      width: 100px;
+    }
+}
+
+
+  
+
+h4 {
+    text-align: center;
+    letter-spacing: 7px;
+    font-size: 50px;
+  }
+  
+  h4 {
+    width: 100%;
+    font-weight: normal;
+    font-size: 20px;
+    position: relative;
+    margin: 40px 0;
+  }
+  
+  h4::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 3px;
+    background-color: crimson;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: animate 4s linear infinite;
+  }
+  
+  @keyframes animate {
+    0% {
+      width: 100px;
+    }
+    50% {
+      width: 200px;
+    }
+    100% {
+      width: 100px;
+    }
+}
+
+  
+
+.service-img {
+    border-radius: 7px;
+}
